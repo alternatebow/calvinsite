@@ -1,5 +1,5 @@
 # LabC
-LabC Due Monday, September 26, 2016, 11:55 PM
+#### LabC Due Monday, September 26, 2016, 11:55 PM
 
 Implement the interface you wrote for Lab B (EntryWayListInterface). As a reminder, EntryWayListInterface allows the user to access to list elements only through the beginning and end of the list.
 
