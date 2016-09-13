@@ -10,29 +10,29 @@
  */
 public class EntryWayList<T> implements EntryWayListInterface<T> {
 
-	private T[] list; // Array of list entries; ignore list[0]
-	private int numberOfEntries;
-	private static final int DEFAULT_CAPACITY = 25;
-	private static final int MAX_CAPACITY = 10000;
+    private T[] list; // Array of list entries; ignore list[0]
+    private int numberOfEntries;
+    private static final int DEFAULT_CAPACITY = 25;
+    private static final int MAX_CAPACITY = 10000;
 
-	public EntryWayList() {
-	    this(DEFAULT_CAPACITY);
-	}
+    public EntryWayList() {
+        this(DEFAULT_CAPACITY);
+    }
 
-	@SuppressWarnings("unchecked")
-	public EntryWayList(int initialCapacity) {
-	    // Is initialCapacity too small?
-	    if (initialCapacity < DEFAULT_CAPACITY)
-	        initialCapacity = DEFAULT_CAPACITY;
-	    else if (initialCapacity > MAX_CAPACITY)
-	            throw new IllegalStateException("Attempt to create a list "
-	                    + "whose capacity exceeds " + "allowed maximum.");
+    @SuppressWarnings("unchecked")
+    public EntryWayList(int initialCapacity) {
+        // Is initialCapacity too small?
+        if (initialCapacity < DEFAULT_CAPACITY)
+            initialCapacity = DEFAULT_CAPACITY;
+        else if (initialCapacity > MAX_CAPACITY)
+                throw new IllegalStateException("Attempt to create a list "
+                        + "whose capacity exceeds " + "allowed maximum.");
 
-	    // The cast is safe because the new array contains null entries
-	    list = (T[]) new Object[initialCapacity];
-	    numberOfEntries = 0;
-	}
-	
+        // The cast is safe because the new array contains null entries
+        list = (T[]) new Object[initialCapacity];
+        numberOfEntries = 0;
+    }
+    
     /**
      * Inserts an element to the beginning of the list.
      * 
@@ -42,10 +42,10 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * @return Returns a boolean value true or false if the insertion was
      *         successful or unable to respectively.
      */
-	@Override
+    @Override
     public boolean insertHead(T newEntry) {
-		return false;
-	}
+        return false;
+    }
 
     /**
      * Inserts an element to the end of the list.
@@ -55,9 +55,9 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * @return Returns a true if element has successfully been added to end of
      *         the list. Else it returns false.
      */
-	@Override
+    @Override
     public boolean insertTail(T newEntry) {
-    	return false;
+        return false;
     }
     
 
@@ -66,28 +66,28 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * 
      * @return Returns the item that was just removed from the list.
      */
-	@Override
+    @Override
     public T deleteHead() {
-		return null;
-	}
+        return null;
+    }
 
     /**
      * Deletes the item at the end of the list and returns it.
      * 
      * @return Returns said item that was at the end of the list.
      */
-	@Override
-	public T deleteTail() {
-		return null;
-	}
+    @Override
+    public T deleteTail() {
+        return null;
+    }
 
     /**
      * Displays all elements currently on the list.
      */
-	@Override
-	public void display() {
-		
-	}
+    @Override
+    public void display() {
+        
+    }
 
     /**
      * Checks to see if the list contains the element passed in. Returns first
@@ -98,26 +98,26 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * @return Returns the index of the element within the list. Returns a
      *         negative number if it doesn't.
      */
-	@Override
-	public int contains(T anEntry) {
-    	return 0;
+    @Override
+    public int contains(T anEntry) {
+        return 0;
     }
 
     /**
      *  Tests whether list is empty
      * @return true if empty
      */
-	@Override
+    @Override
     public boolean isEmpty() {
-		return true;
-	}
+        return true;
+    }
 
     /**
      * Determines whether list is full.
      * @return true if full
      */
-	@Override
-	public boolean isFull() {
-		return false;
-	}
+    @Override
+    public boolean isFull() {
+        return false;
+    }
 }
