@@ -10,7 +10,7 @@
  */
 public class EntryWayList<T> implements EntryWayListInterface<T> {
 
-    private T[] list; // Array of list entries; ignore list[0]
+    private T[] list; // Array of list entries; starting at list[0]
     private int numberOfEntries;
     private static final int DEFAULT_CAPACITY = 25;
     private static final int MAX_CAPACITY = 10000;
