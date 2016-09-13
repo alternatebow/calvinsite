@@ -1,4 +1,3 @@
-
 /**
  * With this kind of list, the user can only access the beginning or ending
  * elements of a list, not any elements from the middle of the list.
@@ -9,9 +8,33 @@
  *
  * @param <T> generic type for list contents
  */
-public interface EntryWayListInterface<T> {
+public class EntryWayList<T> implements EntryWayListInterface<T> {
+
+	private T[] list; // Array of list entries; ignore list[0]
+	private int numberOfEntries;
+	private static final int DEFAULT_CAPACITY = 25;
+	private static final int MAX_CAPACITY = 10000;
+
+	public EntryWayList() {
+	    this(DEFAULT_CAPACITY);
+	}
+
+	@SuppressWarnings("unchecked")
+	public EntryWayList(int initialCapacity) {
+	    // Is initialCapacity too small?
+	    if (initialCapacity < DEFAULT_CAPACITY)
+	        initialCapacity = DEFAULT_CAPACITY;
+	    else if (initialCapacity > MAX_CAPACITY)
+	            throw new IllegalStateException("Attempt to create a list "
+	                    + "whose capacity exceeds " + "allowed maximum.");
+
+	    // The cast is safe because the new array contains null entries
+	    list = (T[]) new Object[initialCapacity];
+	    numberOfEntries = 0;
+	}
+	
     /**
-     * Inserts an element to the beginging of the list.
+     * Inserts an element to the beginning of the list.
      * 
      * @param newEntry
      *            A parameter of generic type T that is the element to be
@@ -19,7 +42,10 @@ public interface EntryWayListInterface<T> {
      * @return Returns a boolean value true or false if the insertion was
      *         successful or unable to respectively.
      */
-    public boolean insertHead(T newEntry);
+	@Override
+    public boolean insertHead(T newEntry) {
+		return false;
+	}
 
     /**
      * Inserts an element to the end of the list.
@@ -29,26 +55,39 @@ public interface EntryWayListInterface<T> {
      * @return Returns a true if element has successfully been added to end of
      *         the list. Else it returns false.
      */
-    public boolean insertTail(T newEntry);
+	@Override
+    public boolean insertTail(T newEntry) {
+    	return false;
+    }
+    
 
     /**
      * Deletes the item at the beginning of the list and then returns that item.
      * 
      * @return Returns the item that was just removed from the list.
      */
-    public T deleteHead();
+	@Override
+    public T deleteHead() {
+		return null;
+	}
 
     /**
      * Deletes the item at the end of the list and returns it.
      * 
      * @return Returns said item that was at the end of the list.
      */
-    public T deleteTail();
+	@Override
+	public T deleteTail() {
+		return null;
+	}
 
     /**
      * Displays all elements currently on the list.
      */
-    public void display();
+	@Override
+	public void display() {
+		
+	}
 
     /**
      * Checks to see if the list contains the element passed in. Returns first
@@ -59,17 +98,26 @@ public interface EntryWayListInterface<T> {
      * @return Returns the index of the element within the list. Returns a
      *         negative number if it doesn't.
      */
-    public int contains(T anEntry);
+	@Override
+	public int contains(T anEntry) {
+    	return 0;
+    }
 
     /**
      *  Tests whether list is empty
      * @return true if empty
      */
-    public boolean isEmpty();
+	@Override
+    public boolean isEmpty() {
+		return true;
+	}
 
     /**
      * Determines whether list is full.
      * @return true if full
      */
-    public boolean isFull();
+	@Override
+	public boolean isFull() {
+		return false;
+	}
 }
