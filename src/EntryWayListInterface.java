@@ -59,7 +59,7 @@ public interface EntryWayListInterface<T> {
      * @return Returns the index of the element within the list. Returns a
      *         negative number if it doesn't.
      */
-    public boolean contains(T anEntry);
+    public int contains(T anEntry);
 
     /**
      *  Tests whether list is empty
