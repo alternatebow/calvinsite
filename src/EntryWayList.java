@@ -52,9 +52,9 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
             numberOfEntries++;
             return true;
             } 
+            return false;
         }
-        return false;
-    }
+        
 
     /**
      * Inserts an element to the end of the list.
