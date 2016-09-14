@@ -56,8 +56,7 @@ public interface EntryWayListInterface<T> {
      * 
      * @param anEntry
      *            Generic parameter that the methods checks for within the list.
-     * @return Returns the index of the element within the list. Returns a
-     *         negative number if it doesn't.
+     * @return first instance of element if it exists, else null.
      */
     public T contains(T anEntry);
 
