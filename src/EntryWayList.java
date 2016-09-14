@@ -124,17 +124,16 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * 
      * @param anEntry
      *            Generic parameter that the methods checks for within the list.
-     * @return Returns the index of the element within the list. Returns a
-     *         negative number if it doesn't.
+     * @return first instance of element if it exists, else null.
      */
     @Override
-    public int contains(T anEntry) {  
+    public T contains(T anEntry) {  
         for(int i=0; i < numberOfEntries; ++i ){
             if(list[i].equals(anEntry)){
-                return i; 
+                return list[i]; 
             }
         }
-        return -1;
+        return null;
     }
 
     /**
