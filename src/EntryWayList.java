@@ -128,13 +128,13 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      *         negative number if it doesn't.
      */
     @Override
-    public int contains(T anEntry) {  
+    public T contains(T anEntry) {  
         for(int i=0; i < numberOfEntries; ++i ){
             if(list[i].equals(anEntry)){
-                return i; 
+                return list[i]; 
             }
         }
-        return -1;
+        return null;
     }
 
     /**
