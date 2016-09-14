@@ -44,6 +44,16 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public boolean insertHead(T newEntry) {
+        if(numberOfEntries < MAX_CAPACITY){
+
+            for(int i = numberOfEntries - 1; i <= 0; i--){
+                this.list[i] = this.list[i + 1]; 
+            }
+            this.list[0] = newEntry;
+            numberOfEntries++;
+            return true;
+            } 
+        }
         return false;
     }
 
@@ -57,6 +67,11 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public boolean insertTail(T newEntry) {
+        if(numberOfEntries < MAX_CAPACITY){
+            this.list[numberOfEntries] = newEntry;
+            numberOfEntries++;
+            return true;
+        }
         return false;
     }
     
@@ -68,6 +83,14 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public T deleteHead() {
+        if(numberOfEntries > 0){
+            T deletedItem = this.list[0];
+            for(int i = 0; i < numberOfEntries -1; i++){
+                this.list[i] = this.list[i+1]; 
+            }
+            numberOfEntries--;
+            return deletedItem;
+        }
         return null;
     }
 
@@ -77,7 +100,12 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * @return Returns said item that was at the end of the list.
      */
     @Override
-    public T deleteTail() {
+    public T deleteTail(){ 
+        if(numberOfEntries > 0){
+            T deletedItem = this.list[numberOfEntries - 1];
+            this.list[numberOfEntries - 1] = null;
+            return deletedItem;
+        }
         return null;
     }
 
@@ -86,7 +114,11 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public void display() {
-        
+        for(T ele: this.list){
+            System.out.println(ele.toString());  // Subject to change. 
+                                                 //Not sure what manner to display the elements. 
+            System.out.println();
+        }
     }
 
     /**
@@ -99,8 +131,13 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      *         negative number if it doesn't.
      */
     @Override
-    public int contains(T anEntry) {
-        return 0;
+    public boolean contains(T anEntry) {  
+        for(T ele: this.list){
+            if(ele.equals(anEntry)){
+                return true; 
+            }
+        }
+        return false;
     }
 
     /**
@@ -109,7 +146,10 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public boolean isEmpty() {
-        return true;
+        if(numberOfEntries == 0){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -118,6 +158,10 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public boolean isFull() {
-        return false;
+        if(numberOfEntries == MAX_CAPACITY){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
