@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * With this kind of list, the user can only access the beginning or ending
  * elements of a list, not any elements from the middle of the list.
@@ -113,11 +115,7 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      */
     @Override
     public void display() {
-        for(T ele: this.list){
-            System.out.println(ele.toString());  // Subject to change. 
-                                                 //Not sure what manner to display the elements. 
-            System.out.println();
-        }
+    	System.out.println(Arrays.toString(list));
     }
 
     /**
@@ -130,13 +128,13 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      *         negative number if it doesn't.
      */
     @Override
-    public boolean contains(T anEntry) {  
-        for(T ele: this.list){
-            if(ele.equals(anEntry)){
-                return true; 
+    public int contains(T anEntry) {  
+        for(int i=0; i < numberOfEntries; ++i ){
+            if(list[i].equals(anEntry)){
+                return i; 
             }
         }
-        return false;
+        return -1;
     }
 
     /**
