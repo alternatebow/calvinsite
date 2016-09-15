@@ -123,7 +123,7 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * 
      * @param anEntry
      *            Generic parameter that the methods checks for within the list.
-     * @return true if list is equal to enrty, else false.
+     * @return true if list contains an entry equal to what's passed in.
      */
     @Override
     public boolean contains(T anEntry){  
