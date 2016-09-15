@@ -127,13 +127,13 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
      * @return first instance of element if it exists, else null.
      */
     @Override
-    public T contains(T anEntry) {  
-        for(int i=0; i < numberOfEntries; ++i ){
-            if(list[i].equals(anEntry)){
-                return list[i]; 
-            }
+    public boolean contains(T anEntry){  
+     for(int i=0; i < numberOfEntries; ++i ){
+        if(list[i].equals(anEntry)){
+            return true; 
         }
-        return null;
+     }
+    return false;
     }
 
     /**
