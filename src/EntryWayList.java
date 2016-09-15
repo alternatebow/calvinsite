@@ -119,12 +119,11 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
     }
 
     /**
-     * Checks to see if the list contains the element passed in. Returns first
-     * instance of element if it exists.
+     * Checks to see if the list contains equal to the entry, and return true. False otherwise.
      * 
      * @param anEntry
      *            Generic parameter that the methods checks for within the list.
-     * @return first instance of element if it exists, else null.
+     * @return true if list is equal to enrty, else false.
      */
     @Override
     public boolean contains(T anEntry){  
