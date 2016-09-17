@@ -57,7 +57,7 @@ public interface EntryWayListInterface<T> {
      *            Generic parameter that the methods checks for within the list.
      * @return true if list contains an entry equal to what's passed in.
      */
-    public boolean contains(T anEntry)
+    public boolean contains(T anEntry);
 
     /**
      *  Tests whether list is empty
