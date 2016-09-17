@@ -47,9 +47,11 @@ public class EntryWayList<T> implements EntryWayListInterface<T> {
     @Override
     public boolean insertHead(T newEntry) {
         if(numberOfEntries < MAX_CAPACITY){
-            for(int i = numberOfEntries - 1; i <= 0; i--){
-                this.list[i] = this.list[i + 1]; 
-            }
+            if(numberOfEntries != 0){
+                for(int i = numberOfEntries - 1; i <= 0; i--){
+                    this.list[i + 1] = this.list[i]; 
+                    }
+                }      
             this.list[0] = newEntry;
             numberOfEntries++;
             return true;
