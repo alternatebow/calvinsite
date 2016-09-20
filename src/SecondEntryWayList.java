@@ -48,7 +48,13 @@ public class SecondEntryWayList implements EntryWayListInterface {
      * 
      * @return Returns the item that was just removed from the list.
      */
-    public T deleteHead();
+    public T deleteHead(){
+    	if(aList.empty()){
+    	 return null;
+    	}else{
+    	return aList.remove(1);
+    	}
+    }
 
     /**
      * Deletes the item at the end of the list and returns it.
