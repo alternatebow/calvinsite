@@ -15,7 +15,7 @@ public class SecondEntryWayList implements EntryWayListInterface {
      * @return Returns a boolean value true or false if the insertion was
      *         successful or unable to respectively.
      */
-    public boolean insertHead(<T> newEntry){
+    public boolean insertHead(T newEntry){
     	if (aList.isFull()) {
     		return false;
     		
@@ -33,7 +33,15 @@ public class SecondEntryWayList implements EntryWayListInterface {
      * @return Returns a true if element has successfully been added to end of
      *         the list. Else it returns false.
      */
-    public boolean insertTail(T newEntry);
+    public boolean insertTail(T newEntry){
+    	if(aList.isFull()){
+    		return false;
+    	}
+    	else{
+    		aList.add(aList.getLength+1,new Entry)
+    		return true;
+    	}
+    }
 
     /**
      * Deletes the item at the beginning of the list and then returns that item.
